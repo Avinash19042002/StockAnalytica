@@ -555,7 +555,7 @@ export default class stockPage extends React.Component {
 					}
 				}.bind(this)
 			);
-		document.title = `StalkStock - ${symbol}`;
+		document.title = `StalkAnalytica - ${symbol}`;
 		fetch(
 			`https://cloud.iexapis.com/stable/stock/${symbol}/quote?displayPercent=true&token=${process.env.REACT_APP_IEX_KEY_2}`
 		)

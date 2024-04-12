@@ -21,19 +21,6 @@ const apiKeys = [
   "AR71RDV9VX7DN1N4"
 ];
 
-// const apiKeys = [
-// 	"G6MMVE9WLPZPCI3Y",
-// 	"G6MMVE9WLPZPCI3Y",
-// 	"G6MMVE9WLPZPCI3Y",
-// 	"G6MMVE9WLPZPCI3Y",
-// ];
-
-// const apiKeys = [
-// 	"GHRQL7GBF9IJLWUO",
-// 	"GHRQL7GBF9IJLWUO",
-// 	"GHRQL7GBF9IJLWUO",
-// 	"GHRQL7GBF9IJLWUO",
-// ];
 
 // CHARTS
 
@@ -700,7 +687,7 @@ class Dashboard extends React.Component {
 					}.bind(this)
 				);
 
-			document.title = "StalkStock - Dashboard";
+			document.title = "StockAnalytica - Dashboard";
 
 			// STOCK LIST
 			this.getStocksList();
