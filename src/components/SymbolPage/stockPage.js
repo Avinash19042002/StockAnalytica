@@ -500,27 +500,27 @@ export default class stockPage extends React.Component {
 						latestPrice: result.latestPrice.toFixed(2),
 					});
 				}
-				keyData[0] = this.abbrNum(result.marketCap, 2);
-				keyDataLabel[0] = "Market Cap ";
-				keyData[1] = result.peRatio;
-				keyDataLabel[1] = "PE Ratio (TTM) ";
+				// keyData[0] = this.abbrNum(result.marketCap, 2);
+				// keyDataLabel[0] = "Market Cap ";
+				// keyData[1] = result.peRatio;
+				// keyDataLabel[1] = "PE Ratio (TTM) ";
 
-				keyData[2] = "$" + result.week52High;
-				keyDataLabel[2] = "52 week High";
+				// keyData[2] = "$" + result.week52High;
+				// keyDataLabel[2] = "52 week High";
 
-				keyData[3] = "$" + result.week52Low;
-				keyDataLabel[3] = "52 Week Low ";
+				// keyData[3] = "$" + result.week52Low;
+				// keyDataLabel[3] = "52 Week Low ";
 
-				keyData[4] = result.ytdChange.toFixed(2) + "%";
-				keyDataLabel[4] = "YTD Change ";
+				// keyData[4] = result.ytdChange.toFixed(2) + "%";
+				// keyDataLabel[4] = "YTD Change ";
 
-				keyData[5] = result.latestVolume;
-				if (keyData[5] !== null) {
-					keyData[5] = this.numberWithCommas(keyData[5]);
-				} else {
-					keyData[5] = "---";
-				}
-				keyDataLabel[5] = "Volume ";
+				// keyData[5] = result.latestVolume;
+				// if (keyData[5] !== null) {
+				// 	keyData[5] = this.numberWithCommas(keyData[5]);
+				// } else {
+				// 	keyData[5] = "---";
+				// }
+				// keyDataLabel[5] = "Volume ";
 			})
 			.then(
 				function () {
@@ -890,29 +890,7 @@ export default class stockPage extends React.Component {
 												}}
 											>
 												<h4>{stockData.name}</h4>
-												<svg
-													id="bookmark"
-													ref={this.bookmark}
-													xmlns="http://www.w3.org/2000/svg"
-													width="25"
-													height="25"
-													viewBox="0 0 24 24"
-													fill="none"
-													stroke-width="2"
-													stroke-linecap="round"
-													stroke-linejoin="round"
-													stroke="#ddd"
-													style={{
-														fill: this.state
-															.fillColor,
-														cursor: "pointer",
-													}}
-													onClick={
-														this.handleWatchlist
-													}
-												>
-													<path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
-												</svg>
+												{}
 											</div>
 											<div className="stockPage__trade-top">
 												<h2>
@@ -1017,7 +995,7 @@ export default class stockPage extends React.Component {
 												<path d="M4.929 2.929l1.414 1.414A7.975 7.975 0 0 0 4 10c0 2.21.895 4.21 2.343 5.657L4.93 17.07A9.969 9.969 0 0 1 2 10a9.969 9.969 0 0 1 2.929-7.071zm14.142 0A9.969 9.969 0 0 1 22 10a9.969 9.969 0 0 1-2.929 7.071l-1.414-1.414A7.975 7.975 0 0 0 20 10c0-2.21-.895-4.21-2.343-5.657L19.07 2.93zM7.757 5.757l1.415 1.415A3.987 3.987 0 0 0 8 10c0 1.105.448 2.105 1.172 2.828l-1.415 1.415A5.981 5.981 0 0 1 6 10c0-1.657.672-3.157 1.757-4.243zm8.486 0A5.981 5.981 0 0 1 18 10a5.981 5.981 0 0 1-1.757 4.243l-1.415-1.415A3.987 3.987 0 0 0 16 10a3.987 3.987 0 0 0-1.172-2.828l1.415-1.415zM12 12a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm-1 2h2v8h-2v-8z" />
 											</g>
 										</svg>
-										Latest News
+										{/* Latest News */}
 									</h3>
 									<News symbol={symbol} />
 								</div>
