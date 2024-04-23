@@ -115,28 +115,7 @@ export default class Leftbar extends React.Component {
 						<GrOptimize size={"4rem"} />
 						</li>
 					</Link>
-					{/* <Link to='/watchlist'>
-						<li>
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								width="48"
-								height="48"
-								viewBox="0 0 24 24"
-								fill="none"
-								stroke="#dddddd"
-								strokeWidth="2"
-								strokeLinecap="round"
-								strokeLinejoin="round"
-								style={{
-									stroke: this.state.bookmarkColor,
-									marginTop:"0px",
-									paddingTop:"0px"
-								}}
-							>
-								<path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
-							</svg>
-						</li>
-					</Link> */}
+					{}
 				</ul>
 				<h5
 					className="panel__status"

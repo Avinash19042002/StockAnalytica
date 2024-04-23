@@ -1,10 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Leftbar from "../Elements/leftbar";
 import Select from 'react-select';
 import DatePicker from 'react-date-picker';
 import 'react-date-picker/dist/DatePicker.css';
 import 'react-calendar/dist/Calendar.css';
+
 
 export default class Optimize extends React.Component {
     constructor() {
@@ -19,7 +19,8 @@ export default class Optimize extends React.Component {
             isDropDown: false,
             startDate: Date.now(),
             endDate: Date.now(),
-            Results: null
+            Results: null,
+            method:null,
         };
         this.status = React.createRef();
     }
@@ -94,7 +95,7 @@ export default class Optimize extends React.Component {
                             color: 'black', // Change text color of options to black
                         }),
                     }}
-                    onChange={(e) => { this.setState({ ...this.state, selectedCompanies: e.map((f) => { return f.value }) }) }}
+                    onChange={(e) => { this.setState({ ...this.state, method: e.value})}}
 
                 />
             </div>
@@ -109,6 +110,11 @@ export default class Optimize extends React.Component {
             companies: this.state.selectedCompanies,
             method: this.state.method,
             amount: this.state.amount,
+        }
+        if(!this.state.method || !this.state.amount || this.state.selectedCompanies.length===0){
+            // for not filling the form completely
+            alert("Missing Values in the form..")
+            return ;
         }
 
         /* ------------------------INCOMPLETE ------------------------------ */
@@ -178,6 +184,7 @@ export default class Optimize extends React.Component {
                         </div>
                     </div>
                 </div>
+            
             </section>
         )
     }

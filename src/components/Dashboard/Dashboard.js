@@ -63,33 +63,6 @@ let watchlist = [],
 // INFORMING USERS ABOUT ALPHA
 
 function Alert() {
-	/*
-    if (
-    sessionStorage.getItem("alert") === "true" ||
-    sessionStorage.getItem("alert") === null
-  ) {
-    return (
-      <div className="alertMessage" id="alertMessage">
-        <h2>HELLO !</h2>
-        <p>
-          This application is in pre-alpha. It means you might have problem with
-          responsiveness, buyng/selling stocks and due to my api provider, there
-          is a limit in loading charts.
-        </p>
-        <button
-          onClick={() => {
-            document.getElementById("alertMessage").outerHTML = "";
-            sessionStorage.setItem("alert", "false");
-          }}
-          className="alertMessage__button">
-          OK
-        </button>
-      </div>
-    );
-  } else {
-    return <div />;
-  }
-*/
 	return <div />;
 }
 
@@ -201,113 +174,8 @@ class Dashboard extends React.Component {
 		};
 	}
 
-	/*
-	 * Fetching data required for charts and adds to array
-	 * @param {dataChart} array to store info about charts
-	 * @param {symbol} name of stock as symbol
-	 * @param {callback} callback
-	 */
-
-	// getChart(dataChart, symbol, callback) {
-	// 	let b = 0;
-	// 	const stockApi = `https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=${symbol}&interval=1min&apikey=${apiKeys[0]}`;
-	// 	fetch(stockApi)
-	// 		.then((res) => res.json())
-	// 		.then((result) => {
-	// 			if (
-	// 				typeof result["Note"] === "undefined" &&
-	// 				Object.keys(result["Time Series (1min)"]).length > 1
-	// 			) {
-	// 				for (
-	// 					let i =
-	// 						Object.keys(result["Time Series (1min)"]).length -
-	// 						1;
-	// 					i > 0 || callback();
-	// 					i--
-	// 				) {
-	// 					dataChart.push(
-	// 						parseFloat(
-	// 							result["Time Series (1min)"][
-	// 								Object.keys(result["Time Series (1min)"])[
-	// 									parseInt(i)
-	// 								]
-	// 							]["4. close"]
-	// 						).toFixed(2)
-	// 					);
-	// 				}
-	// 			} else {
-	// 				if (typeof result["Note"] === "undefined") {
-	// 					b++;
-	// 					const stockApi = `https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=${symbol}&interval=1min&apikey=${
-	// 						apiKeys[parseInt(b)]
-	// 					}`;
-	// 					fetch(stockApi)
-	// 						.then((res) => res.json())
-	// 						.then((result) => {
-	// 							if (
-	// 								typeof result["Note"] === "undefined" &&
-	// 								result.length > 1
-	// 							) {
-	// 								for (
-	// 									let i =
-	// 										Object.keys(
-	// 											result["Time Series (1min)"]
-	// 										).length - 1;
-	// 									i > 0 || callback();
-	// 									i--
-	// 								) {
-	// 									dataChart.push(
-	// 										parseFloat(
-	// 											result["Time Series (1min)"][
-	// 												Object.keys(
-	// 													result[
-	// 														"Time Series (1min)"
-	// 													]
-	// 												)[parseInt(i)]
-	// 											]["4. close"]
-	// 										).toFixed(2)
-	// 									);
-	// 								}
-	// 							}
-	// 						});
-	// 				} else {
-	// 					if (
-	// 						typeof result["Note"] === "undefined" &&
-	// 						result.length > 1
-	// 					) {
-	// 						b++;
-	// 						const stockApi = `https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=${symbol}&interval=1min&apikey=${
-	// 							apiKeys[parseInt(b)]
-	// 						}`;
-	// 						fetch(stockApi)
-	// 							.then((res) => res.json())
-	// 							.then((result) => {
-	// 								for (
-	// 									let i =
-	// 										Object.keys(
-	// 											result["Time Series (1min)"]
-	// 										).length - 1;
-	// 									i > 0 || callback();
-	// 									i--
-	// 								) {
-	// 									dataChart.push(
-	// 										parseFloat(
-	// 											result["Time Series (1min)"][
-	// 												Object.keys(
-	// 													result[
-	// 														"Time Series (1min)"
-	// 													]
-	// 												)[parseInt(i)]
-	// 											]["4. close"]
-	// 										).toFixed(2)
-	// 									);
-	// 								}
-	// 							});
-	// 					}
-	// 				}
-	// 			}
-	// 		});
-	// }
+	
+	
 	getStockInfo(symbol, dataChart, changeStash, priceStash, num, callback) {
 		const percentageChange = `https://cloud.iexapis.com/stable/stock/${symbol}/quote?displayPercent=true&token=${process.env.REACT_APP_IEX_KEY_1}`;
 		if (typeof symbol !== "undefined") {

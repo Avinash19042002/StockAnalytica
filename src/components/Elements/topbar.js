@@ -87,10 +87,18 @@ export default class Topbar extends React.Component {
 
 			ref.on("value", (snapshot) => {
 				if (snapshot.val()) {
-					snapshot.val().map((index) => {
-						allSymbols.push(index.symbol);
-						allNames.push(index.name);
-					});
+					const obj = snapshot.val();
+					const keys = Object.keys(obj);
+					// console.log(obj.keys()) 
+					// console.log(snapshot.val())
+					for(let i=0;i<keys.length;i++){
+						let x = obj[keys[i]];
+						if(x.symbol && x.name){
+							allSymbols.push(x.symbol);
+							allNames.push(x.name)
+						}
+					}
+					
 				}
 			});
 		}
